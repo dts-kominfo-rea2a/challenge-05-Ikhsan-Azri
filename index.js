@@ -6,15 +6,25 @@ const names = ["Halo", "Angel", "Nyoman", "Ketut", "Aisyah"];
 // "1. Nama"
 // "2. Nama"
 // ...
-const sorter = null;
+const sorter = (paramNames, logicSorter)=>{
+  const namesOrder= [];
+  for(let number=0; number<paramNames.length; number++){
+    namesOrder.push(number + 1 +". "+logicSorter(paramNames)[number]);
+  }
+  return namesOrder;
+};
 
 // TODO: Fungsi untuk mengurutkan array of string secara ascending
 // mengembalikan array yang sudah diurutkan
-const sortAscending = null;
+const sortAscending = (namesFilter)=>{
+  return namesFilter.sort();
+};
 
 // TODO: Fungsi untuk mengurutkan array of string secara descending
 // mengembalikan array yang sudah diurutkan
-const sortDescending = null;
+const sortDescending = (namesFilter)=>{
+  return namesFilter.sort().reverse();
+};
 
 // ! JANGAN DIMODIFIKASI
 (function main() {
@@ -28,3 +38,6 @@ module.exports = {
   sortDescending,
   names,
 };
+
+// console.log(sortAscending(names));
+// console.log(sortDescending(names));
